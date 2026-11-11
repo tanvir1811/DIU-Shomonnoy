@@ -1,0 +1,41 @@
+/* Cover page generator styles (all scoped under .cover-generator) */
+.cover-generator h2.cp-title::after { display: block; }
+.cp-subtitle { color: var(--muted); max-width: 60ch; margin-bottom: 22px; }
+
+/* Form cards */
+.cp-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-bottom: 28px; }
+.cp-field { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 6px 20px 20px; margin: 0; min-width: 0; transition: border-color 0.2s, box-shadow 0.2s; }
+.cp-field:focus-within { border-color: var(--daffodil); box-shadow: 0 8px 24px rgba(18, 24, 58, 0.08); }
+.cp-legend { display: flex; align-items: center; gap: 8px; padding: 0 8px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; }
+.cp-legend::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--daffodil); }
+.cp-field label { display: block; margin: 12px 0 5px; font-weight: 600; font-size: 0.88rem; color: var(--ink-soft); }
+.cp-two-columns { display: flex; gap: 8px; }
+.cp-two-columns > * { flex: 1; min-width: 0; }
+.cp-member-row { display: flex; gap: 6px; margin-bottom: 8px; }
+.cp-member-row input { min-width: 0; }
+.cp-small-button { background: var(--page); color: var(--ink); border: 1px solid var(--line); padding: 8px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-weight: 600; transition: background 0.2s; }
+.cp-small-button:hover { background: var(--daffodil-soft); }
+.cp-hint { font-size: 0.85rem; color: var(--muted); margin: 8px 0 0; }
+
+/* Preview area */
+.cp-preview-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.cp-preview-header h3 { margin: 0; font-size: 1.4rem; }
+.cp-desk { display: flex; overflow: hidden; background: var(--tint-blue); border-radius: 22px; padding: 24px 16px; }
+.cp-paper-shadow { margin: 0 auto; flex: none; overflow: hidden; box-shadow: 0 18px 40px rgba(18, 24, 58, 0.22); }
+.cp-scaler { width: 794px; height: 1123px; transform-origin: top left; }
+
+/* The cover page itself (stays black on white for printing) */
+#cover-page { width: 794px; height: 1123px; background: white; overflow: hidden; color: black; font-family: "Times New Roman", Times, serif; }
+.cp-logo { display: block; height: 110px; margin: 30px auto 0; }
+.cp-cover-name { text-align: center; font-size: 34px; padding: 8px; }
+.cp-marks-area { width: 90%; margin: 10px 5% 8px; }
+.cp-marks-table { width: 100%; font-size: 16px; border-collapse: collapse; }
+.cp-marks-table th, .cp-marks-table td { border: 1px solid #333; padding: 9px 6px; text-align: center; }
+.cp-align-right { text-align: right !important; }
+.cp-row { width: 90%; display: flex; margin-left: 5%; }
+.cp-row-label { font-weight: bold; font-size: 19px; margin-top: 12px; padding-left: 1%; }
+.cp-row-value { font-size: 19px; margin-top: 12px; padding-left: 1%; }
+.cp-batch-value { margin-right: 40%; }
+.cp-team-area { width: 90%; margin-left: 5%; }
+.cp-team-table { width: 100%; border-collapse: collapse; margin-top: 4px; font-size: 17px; }
+.cp-team-table td { border: 1px solid #333; padding: 4px 8px; }
