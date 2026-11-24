@@ -28,4 +28,6 @@ module.exports = {
   uploadFacultyPic: makeUploader("faculty", true),
   uploadNoteFile: makeUploader("notes", false),
   uploadQuestionFiles: makeUploader("questions", false),
+  uploadEquipmentFile: makeUploader("equipment", true),
+  uploadBookPhoto: makeUploader("books", true), // NEW: book photos (images only // NEW: equipment pictures (images only)
 };

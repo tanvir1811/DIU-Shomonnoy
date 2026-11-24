@@ -62,3 +62,32 @@ CREATE TABLE IF NOT EXISTS faculty (
   Image              VARCHAR(500) DEFAULT '',
   Counseling_Hour    VARCHAR(100) DEFAULT ''
 );
+CREATE TABLE IF NOT EXISTS books (
+  Listing_id     INT AUTO_INCREMENT PRIMARY KEY,
+  Title          VARCHAR(255) NOT NULL,
+  Course         VARCHAR(100) NOT NULL,
+  Edition        VARCHAR(50)  DEFAULT '',
+  Asking_Type    ENUM('Rent', 'Buy', 'Lend') NOT NULL,
+  Book_Condition ENUM('New', 'Like New', 'Good', 'Fair', 'Poor') NOT NULL,
+  Price          DECIMAL(10,2) NULL,          -- NULL for Lend (free)
+  Review         TEXT,
+  Photo_Path     VARCHAR(255) DEFAULT '',
+  Uploaded_by    VARCHAR(20) NOT NULL,
+  created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (Uploaded_by) REFERENCES users(student_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS equipment (
+  Equipment_id   INT AUTO_INCREMENT PRIMARY KEY,
+  Title          VARCHAR(255) NOT NULL,
+  Description    TEXT,
+  Picture_Path   VARCHAR(255) DEFAULT '',
+  Asking_Type    ENUM('Rent', 'Buy', 'Lend') NOT NULL,
+  Equipment_Condition ENUM('New', 'Like New', 'Good', 'Fair', 'Poor') NOT NULL,
+  Price          DECIMAL(10,2) NULL,          -- NULL for Lend (free)
+  Uploaded_by    VARCHAR(20) NOT NULL,
+  created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (Uploaded_by) REFERENCES users(student_id) ON DELETE CASCADE
+);
+
+

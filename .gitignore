@@ -1,1 +1,9 @@
 .env
+node_modules/
+.env
+backend/uploads/
+.vscode/
+node_modules/
+.env
+backend/uploads/
+.vscode/

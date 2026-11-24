@@ -3,12 +3,16 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const pool = require("./config/database");
+const rateLimit = require("express-rate-limit");
 
 const userRoutes = require("./user/userRoutes");
 const adminRoutes = require("./admin/adminRoutes");
 const noteRoutes = require("./note/noteRoutes");
 const questionRoutes = require("./questionBank/questionRoutes");
 const facultyRoutes = require("./faculty/facultyRoutes");
+const bookRoutes = require("./book/bookRoutes");
+const equipmentRoutes = require("./equipment/equipmentRoutes");
+const requestRoutes = require("./request/requestRoutes");
 
 const app = express();
 
@@ -19,8 +23,14 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/notes", noteRoutes);
+app.use("/api/books", bookRoutes);
+app.use("/api/equipment", equipmentRoutes);
 app.use("/api/question-bank", questionRoutes);
 app.use("/api/faculty", facultyRoutes);
+
+// Request emails: max 10 requests per 15 minutes from one IP, then the route
+app.use("/api/requests", rateLimit({ windowMs: 15 * 60 * 1000, max: 10 }));
+app.use("/api/requests", requestRoutes);
 
 // Upload errors (wrong type, too big) and anything unexpected
 app.use(function (error, req, res, next) {

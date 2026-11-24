@@ -351,7 +351,8 @@ function DashboardItem({ kind, isQuestion, item, onSaved, onDeleted, onProblem }
   );
 }
 
-// Dashboard where the student sees, edits and deletes their own notes and question banks
+// Dashboard where the student sees, edits and deletes their own notes and question banks,
+// and can jump to uploading / viewing their books and equipment
 export function DashboardPage() {
   const navigate = useNavigate();
   const loggedInUser = getLoggedInUser();
@@ -447,6 +448,20 @@ export function DashboardPage() {
         </button>
         <button className={isQuestionTab ? "btn btn-yellow" : "btn"} onClick={function () { setActiveTab("questions"); }}>
           My question banks ({questionList.length})
+        </button>
+        <button className="btn" onClick={function () { navigate("/books", { state: { viewMine: true } }); }}>
+          My books
+        </button>
+        <button className="btn" onClick={function () { navigate("/equipment", { state: { viewMine: true } }); }}>
+          My equipment
+        </button>
+      </div>
+      <div className="toolbar">
+        <button className="btn btn-yellow" onClick={function () { navigate("/books", { state: { openForm: true } }); }}>
+          Upload a book
+        </button>
+        <button className="btn btn-yellow" onClick={function () { navigate("/equipment", { state: { openForm: true } }); }}>
+          Upload equipment
         </button>
       </div>
       {statusMessage !== "" && <div className={isStatusError ? "message-error" : "message-ok"}>{statusMessage}</div>}

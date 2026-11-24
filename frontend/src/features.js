@@ -11,6 +11,9 @@ import { QuestionBankPage } from "./questionBank/QuestionBankPage";
 import { FacultyPage } from "./faculty/FacultyPage";
 import { DashboardPage, SignupPage, LoginPage, ProfilePage } from "./user/UserPage";
 import { AdminLoginPage, AdminProfilePage, AdminDashboardPage } from "./admin/AdminPage";
+import { BookPage } from "./book/bookPage";
+import { EquipmentPage } from "./equipment/equipmentPage";
+
 
 // Menu groups, in the order they appear in the navbar
 export const groups = ["Academic", "Marketplace", "Community"];
@@ -57,7 +60,7 @@ export const features = [
     title: "Book Listing",
     description: "Buy, sell or swap textbooks by course, edition and condition.",
     action: "Browse books",
-    component: null,
+    component: BookPage,
   },
   {
     path: "/equipment",
@@ -65,7 +68,7 @@ export const features = [
     title: "Equipment",
     description: "Calculators, lab kits and drawing tools from other students at a fair price.",
     action: "Browse equipment",
-    component: null,
+    component: EquipmentPage,
   },
   {
     path: "/discussion",

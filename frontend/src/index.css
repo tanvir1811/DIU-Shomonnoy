@@ -271,3 +271,38 @@ label {
   .home-hero { grid-template-columns: 1fr; gap: 28px; padding-top: 8px; }
   .paper-mock { width: min(60%, 220px); }
 }
+
+.equipment-card { overflow: hidden; }
+.equipment-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.equipment-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #888;
+  font-size: 14px;
+}
+.book-card { overflow: hidden; }
+.book-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.book-no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #888;
+  font-size: 14px;
+}
